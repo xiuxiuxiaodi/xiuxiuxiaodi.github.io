@@ -5,7 +5,6 @@ $(document).ready(function () {
   initScrollSpy();
   NexT.utils.needAffix() && initAffix();
   initTOCDimension();
-
   function initScrollSpy () {
     var tocSelector = '.post-toc';
     var $tocElement = $(tocSelector);
