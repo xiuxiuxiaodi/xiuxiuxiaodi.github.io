@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>spark技术笔记</title>
+    <url>/2020/06/23/spark%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0-1/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>技术笔记-0621</title>
     <url>/2020/06/22/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="5-30"><a href="#5-30" class="headerlink" title="5.30"></a>5.30</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># pip代理安装</span></span><br><span class="line">pip install gunicorn --proxy=<span class="string">"http://10.57.22.219:3128/"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#删除redis 所有键</span></span><br><span class="line">redis-cli keys <span class="string">"*18910869505*"</span> | xargs redis-cli <span class="keyword">del</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># gunicorn 部署服务</span></span><br><span class="line">gunicorn -w <span class="number">3</span> -b <span class="number">10.57</span><span class="number">.17</span><span class="number">.68</span>:<span class="number">8081</span> model.bioprecalservice:app</span><br></pre></td></tr></table></figure>
