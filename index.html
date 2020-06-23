@@ -301,7 +301,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-23T16:08:07+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-23T16:18:17+08:00">
                 2020-06-23
               </time>
             
@@ -339,7 +339,7 @@
       
         
           
-          
+          Spark的DataFrame中用explode将array数组转换成多行123456789101112131415161718192021222324&#x2F;&#x2F;service_prod_code字段类型为arrayval df_info &#x3D; spark.sql(    &quot;&quot;&quot;      select        product, service_prod_code      from        tablename    &quot;&quot;&quot;.stripMargin)&#x2F;&#x2F;使用explode会将原值中的null值删除掉，就是说，如果原来的array值为空的话，通过explode转换后，会直接删除掉这行数据，只保留array指不为空的数据val service_result &#x3D; df_info.withColumn(&quot;service_explode&quot;, explode(col(&quot;service_prod_code&quot;)))&#x2F;&#x2F;想要保留array值为空的数据的话，可采用如下方法&#x2F;&#x2F;spark 2.2+val service_result &#x3D; df_info.withColumn(&quot;service_explode&quot;, explode_outer(col(&quot;service_prod_code&quot;)))&#x2F;&#x2F;spark &lt;&#x3D;2.1df.withColumn(&quot;service_explode&quot;, explode(  when(col(&quot;service_prod_code&quot;).isNotNull, col(&quot;service_prod_code&quot;))    &#x2F;&#x2F; If null explode an array&lt;string&gt; with a single null    .otherwise(array(lit(null).cast(&quot;string&quot;)))))
           
           <!--noindex-->
           <div class="post-more-link text-center">
