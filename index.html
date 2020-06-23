@@ -340,7 +340,9 @@
         
           
           Spark的DataFrame中用explode将array数组转换成多行123456789101112131415161718192021222324&#x2F;&#x2F;service_prod_code字段类型为arrayval df_info &#x3D; spark.sql(    &quot;&quot;&quot;      select        product, service_prod_code      from        tablename    &quot;&quot;&quot;.stripMargin)&#x2F;&#x2F;使用explode会将原值中的null值删除掉，就是说，如果原来的array值为空的话，通过explode转换后，会直接删除掉这行数据，只保留array指不为空的数据val service_result &#x3D; df_info.withColumn(&quot;service_explode&quot;, explode(col(&quot;service_prod_code&quot;)))&#x2F;&#x2F;想要保留array值为空的数据的话，可采用如下方法&#x2F;&#x2F;spark 2.2+val service_result &#x3D; df_info.withColumn(&quot;service_explode&quot;, explode_outer(col(&quot;service_prod_code&quot;)))&#x2F;&#x2F;spark &lt;&#x3D;2.1df.withColumn(&quot;service_explode&quot;, explode(  when(col(&quot;service_prod_code&quot;).isNotNull, col(&quot;service_prod_code&quot;))    &#x2F;&#x2F; If null explode an array&lt;string&gt; with a single null    .otherwise(array(lit(null).cast(&quot;string&quot;)))))
-          
+
+spark convert RDD[Map] to
+          ...
           <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/2020/06/23/spark%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/#more" rel="contents">
