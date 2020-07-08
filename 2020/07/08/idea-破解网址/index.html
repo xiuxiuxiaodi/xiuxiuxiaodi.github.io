@@ -84,14 +84,14 @@
 
 
 
-<meta name="description" content="Spark的DataFrame中用explode将array数组转换成多行123456789101112131415161718192021222324&#x2F;&#x2F;service_prod_code字段类型为arrayval df_info &#x3D; spark.sql(    &quot;&quot;&quot;      select        product, servi">
+<meta name="description" content="http:&#x2F;&#x2F;fls.jetbrains-agent.com">
 <meta property="og:type" content="article">
-<meta property="og:title" content="spark技术笔记">
-<meta property="og:url" content="http://yoursite.com/2020/06/23/spark%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="idea 破解网址">
+<meta property="og:url" content="http://yoursite.com/2020/07/08/idea-%E7%A0%B4%E8%A7%A3%E7%BD%91%E5%9D%80/index.html">
 <meta property="og:site_name" content="江左有梅郎的blog">
-<meta property="og:description" content="Spark的DataFrame中用explode将array数组转换成多行123456789101112131415161718192021222324&#x2F;&#x2F;service_prod_code字段类型为arrayval df_info &#x3D; spark.sql(    &quot;&quot;&quot;      select        product, servi">
-<meta property="article:published_time" content="2020-06-23T08:18:17.000Z">
-<meta property="article:modified_time" content="2020-06-23T08:23:49.959Z">
+<meta property="og:description" content="http:&#x2F;&#x2F;fls.jetbrains-agent.com">
+<meta property="article:published_time" content="2020-07-08T08:02:34.000Z">
+<meta property="article:modified_time" content="2020-07-08T08:02:46.757Z">
 <meta property="article:author" content="louis">
 <meta name="twitter:card" content="summary">
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/06/23/spark技术笔记/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/07/08/idea-破解网址/"/>
 
 
 
 
 
-  <title> spark技术笔记 | 江左有梅郎的blog </title>
+  <title> idea 破解网址 | 江左有梅郎的blog </title>
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -261,7 +261,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/23/spark%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/08/idea-%E7%A0%B4%E8%A7%A3%E7%BD%91%E5%9D%80/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="louis">
@@ -285,7 +285,7 @@
             
             
               
-                spark技术笔记
+                idea 破解网址
               
             
           </h1>
@@ -298,8 +298,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-23T16:18:17+08:00">
-                2020-06-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-08T16:02:34+08:00">
+                2020-07-08
               </time>
             
 
@@ -334,10 +334,7 @@
       
 
       
-        <h1 id="Spark的DataFrame中用explode将array数组转换成多行"><a href="#Spark的DataFrame中用explode将array数组转换成多行" class="headerlink" title="Spark的DataFrame中用explode将array数组转换成多行"></a>Spark的DataFrame中用explode将array数组转换成多行</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;service_prod_code字段类型为array</span><br><span class="line">val df_info &#x3D; spark.sql(</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">      select</span><br><span class="line">        product, service_prod_code</span><br><span class="line">      from</span><br><span class="line">        tablename</span><br><span class="line">    &quot;&quot;&quot;.stripMargin)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;使用explode会将原值中的null值删除掉，就是说，如果原来的array值为空的话，通过explode转换后，会直接删除掉这行数据，只保留array指不为空的数据</span><br><span class="line">val service_result &#x3D; df_info.withColumn(&quot;service_explode&quot;, explode(col(&quot;service_prod_code&quot;)))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;想要保留array值为空的数据的话，可采用如下方法</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;spark 2.2+</span><br><span class="line">val service_result &#x3D; df_info.withColumn(&quot;service_explode&quot;, explode_outer(col(&quot;service_prod_code&quot;)))</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;spark &lt;&#x3D;2.1</span><br><span class="line">df.withColumn(&quot;service_explode&quot;, explode(</span><br><span class="line">  when(col(&quot;service_prod_code&quot;).isNotNull, col(&quot;service_prod_code&quot;))</span><br><span class="line">    &#x2F;&#x2F; If null explode an array&lt;string&gt; with a single null</span><br><span class="line">    .otherwise(array(lit(null).cast(&quot;string&quot;)))))</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://www.jianshu.com/p/605b83eda24a" target="_blank" rel="noopener">spark convert RDD[Map] to DataFrame</a></p>
-<p><a href="https://blog.csdn.net/lukabruce/article/details/100666254" target="_blank" rel="noopener">spark之explode()方法— 行转列</a></p>
+        <p><a href="http://fls.jetbrains-agent.com" target="_blank" rel="noopener">http://fls.jetbrains-agent.com</a></p>
 
       
     </div>
@@ -364,8 +361,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/06/22/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" rel="next" title="技术笔记-0621">
-                <i class="fa fa-chevron-left"></i> 技术笔记-0621
+              <a href="/2020/06/23/spark%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" rel="next" title="spark技术笔记">
+                <i class="fa fa-chevron-left"></i> spark技术笔记
               </a>
             
           </div>
@@ -373,10 +370,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/07/08/idea-%E7%A0%B4%E8%A7%A3%E7%BD%91%E5%9D%80/" rel="prev" title="idea 破解网址">
-                idea 破解网址 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -423,17 +416,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/default_avatar.png"
@@ -479,22 +463,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spark的DataFrame中用explode将array数组转换成多行"><span class="nav-number">1.</span> <span class="nav-text">Spark的DataFrame中用explode将array数组转换成多行</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
     </div>
